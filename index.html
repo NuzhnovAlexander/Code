@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>API</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <form>
+        <div class="title">Форма запроса
+        </div>
+        <div class = "form">
+            <a class="tf">Фамилия</a>
+            <input name="fn" class="field" type="text" value="" required pattern=".{2,15}" title="От 1 до 40 букв" />
+        </div>
+        <div class = "form">
+            <a class="tf">Имя</a>
+                <input name="ln" class="field" type="text" value="" required pattern=".{2,15}" title="От 1 до 40 букв" />
+            </div>
+        <div class = "form">
+            <a class="tf">Отчество</a>
+                <input name="mn" class="field" type="text" value="" required pattern=".{2,15}" title="От 1 до 40 букв" />
+            </div>
+        <div class = "form">
+            <a class="tf">СНИЛС</a>
+                <input name="snils" class="field" type="text" value="" required	pattern="\d{3}-\d{3}-\d{3} \d{2}" title="Формат СНИЛС: XXX-XXX-XXX XX" />
+            </div>
+        <div class = "form">
+            <a class="tf">Дата рождения</a>
+        <input name="db" class="field" type="text" value="" required pattern="\d{2}.\d{2}.\d{4}" title="Формат ДР: XX.XX.XXXX" />
+        </div>
+        <div class = "form">
+            <a class="tf">Наличие данных</a>
+                <select name="da" class="field" type="text" value="" required title= "Выберите пункт из меню">
+                    <option value=""></option>
+                    <option value="Да">Да</option>
+                    <option value="Нет">Нет</option>
+                </select>
+           </div>
+        <div class="title">Общая продолжительность страхового стажа на дату обращения гражданина
+        </div>
+        <div class = "form">
+            <a class="tf">Общая продолжительность страхового стажа лет</a>
+            <input name="i1" class="field" type="text" required value="" pattern="\d{1,3}" title= "от 1 до 3 цифр"/>
+        </div>
+        <div class = "form">
+            <a class="tf">Общая продолжительность страхового стажа месяцев</a>
+            <input name="i2" class="field" type="text" required value="" pattern="\d{1,2}"  title= "от 1 до 2 цифр" />
+        </div>
+        <div class = "form">
+            <a class="tf">Общая продолжительность страхового стажа дней</a>
+            <input name="i3" class="field" type="text" required value="" pattern="\d{1,2}"  title= "от 1 до 2 цифр" />
+        </div>
+        <input class="save" type="button" onclick="request(this.form)"  value="Cохранить" />
+        <div class="title">Итоговый запрос
+        </div>
+        <div class="form">
+            <a class="tf">Запрос</a>
+            <p id="out"></p>
+        </div>
+    </form>
+
+</body>
+</html>
