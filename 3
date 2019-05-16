@@ -1,0 +1,32 @@
+var m = 4, n = 3;
+var nums1 = [18, 46, 55, 59, 0, 0, 0], nums2 = [18, 29, 5];
+merge(nums1, m, nums2, n);
+
+function merge(nums1, m, nums2, n) {
+for (var i = 0; i < n; i++) {
+    for (var j = 0; j < nums1.length; j++) {
+        if (nums1[j] > nums2[i] || j==nums1.length-1) {
+            nums1.splice(j, 0, nums2[i])
+            nums1.pop();
+            j = nums1.length;
+
+        }
+    }
+    }
+    //alert(nums1);
+    nums1 = JSON.stringify(nums1);
+    downloadData("application/json", nums1, "output.json");
+   
+};
+function downloadData(contentType, content, file_name) {
+    var Data = new Blob([content], { type: 'contentType' });
+    
+        var a = document.createElement("a");
+        a.style = "display: none";
+        var Url = URL.createObjectURL(Data);
+        a.href = Url;
+        a.download = file_name;
+        a.click();
+        a.remove();
+    
+}
